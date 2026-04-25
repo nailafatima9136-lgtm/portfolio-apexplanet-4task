@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head><title>
+        </title></head>
+        <style>
+            body{
+                background-color: white;
+                color: black;
+            }
+        body.dark-mode{
+            background-color: black;
+            color: white;
+        }
+        h1{
+            background-color: pink;
+            text-align: center;
+            padding: 10px;
+            position: sticky;
+            margin: 10px;
+            color: hotpink;
+        } 
+        nav{
+            background-color: hotpink;
+            display: flex;
+            position: sticky;
+            top: 0%;
+            z-index: 1000;
+        }
+        nav ul {
+  display: flex;          /* puts items in one line */
+  justify-content: center;/* centers them horizontally */
+  gap: 15px;              /* small space between each link */
+  list-style: none;       /* removes default bullets */
+  padding: 0;
+  margin: 0;
+  position: sticky;
+  top: 0%;
+  z-index: 1000;
+}
+    #toggleBtn {
+        display: block;
+        margin: auto;
+        padding: 20px;
+        background-color: hotpink;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+        </style>
+        <body>
+            <h1>PORTFOLIO</h1>
+            <nav>
+                <ul>
+                  <li><a href="#about">ABOUT</a></li>
+                  <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#to-do-list">TO-DO LIST</a></li>
+                  <li> <a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+
+        <button id="toggleBtn">SWITCH TO DARK MODE</button>
+        <script>
+        const btn= document.getElementById("toggleBtn");
+        btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+        } else {
+            btn.textContent = "SWITCH TO DARK MODE";
+        }
+        } );
+
+        </script>
+<h2 style="color: hotpink;"><b>WELCOME TO MY PORTFOLIO!</b></h2>
+ <p>Here, you will find a collection of my best work showcasing my skills and passion for web development.<br>
+ I am excited to share my journey and projects with you,<br>
+  and I hope you find inspiration and value in what I have created Portfolio</p><br><br><hr>
+
+  <section id="about" class="about">
+<h2 style="color: hotpink;"><b>ABOUT ME</h2></b>
+<h2> NAILA FATIMA IDRISI </h2><br>
+🌟I’m Naila Fatima Idrisi, a FYBSc IT student passionate about building interactive, responsive, and user-friendly web projects.
+ My focus is on creating layouts that balance creativity with functionality—whether it’s seamless navigation, dynamic DOM-based features,
+  or visually engaging effects like quizzes with celebration animations.
+
+Currently, I’m developing projects for my internship portfolio at ApexPlanet, showcasing responsive layouts, dark/light mode toggles,
+ and interactive demos. My goal is to combine technical precision with creative storytelling, presenting projects that stand out both 
+ visually and functionally.<br><br><br><hr>
+ </section>
+
+
+ <section id="projects" class="projects">
+ <h2 style="color: hotpink;"><b>MY PROJECTS </b></h2><br>
+<p> Introductory web development task: building a simple webpage with HTML, CSS, and JavaScript<br>
+<a href="https://github.com/nailafatima9136-lgtm/apexplanet-webdevelopment-task1" target="_blank">VIEW TASK 1 PROJECT</a><br></p>
+
+<p>A simple yet interactive To-Do List web app built with HTML, CSS, and JavaScript. Features include dynamic add/remove functionality, responsive layout,<br> 
+and DOM-based updates for a smooth user experience. Designed as part of portfolio development to showcase interactive web design and task management features.<br>
+<a href="https://github.com/nailafatima9136-lgtm/Listify_Task-2">🔗 View To-Do List Project on GitHub</a><br></p>
+
+<p>An interactive quiz webpage built with HTML, CSS, and JavaScript. Features visually distinct question boxes, dynamic DOM-based effects, and clear result visibility <br>
+after submission. Includes thoughtful button placement, responsive layout, and user-friendly navigation to ensure an engaging experience.<br>
+<a href="https://github.com/nailafatima9136-lgtm/Brainout_3task">🔗 View Quiz Project on GitHub</a><br></p>
+</section><br><br><hr>
+
+<section id="to-do-list" class="to-do-list">
+<h2 style="color: hotpink;"><b>TO-DO LIST</b></h2><br>
+<h2>MY TASKS</h2>
+<input type="text" id="taskInput" placeholder="Enter a new task">
+<button onclick="addTask()">ADD TASKS</button>
+<ul id="tasklist"></ul>
+</section>
+<script>
+    function addTask(){
+        let taskInput=document.getElementById("taskInput");
+        let taskValue=taskInput.value.trim();
+        if (taskValue==="")return;
+        let li=document.createElement("li");
+        let span=document.createElement("span");
+        span.textContent=taskValue;
+        span.onclick=function(){
+            span.classList.toggle("done");
+        };
+        
+        let deleteBtn=document.createElement("Button");
+        deleteBtn.textContent="Delete";
+        deleteBtn.className="DeleteBtn";
+        deleteBtn.onclick=function(){
+            li.remove();
+        };
+        li.appendChild(span);
+        li.appendChild(deleteBtn);
+        document.getElementById("tasklist").appendChild(li);
+        taskInput.value="";
+      }
+</script><br><br><hr>
+
+<section id="contact" class="contact">
+    <h2 style="color: hotpink;"><b>CONTACT</b></h2><br>
+    <a href="mailto:nailafatima9136@gmail.com" target="_blank">📧 Email: nailafatima9136</a><br>
+    <a href="https://github.com/nailafatima9136-lgtm" target="_blank">💻 GitHub</a><br>
+    <a href="https://www.linkedin.com/in/naila-fatima-idrisi" target="_blank">🔗 LinkedIn</a>
+</section>
+
+        </body>
+</html>
